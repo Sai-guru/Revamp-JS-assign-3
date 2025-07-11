@@ -108,6 +108,53 @@ Once running, you should see a message in your console indicating which port the
 Now, open your browser or use a tool like Postman/Insomnia and navigate to `http://localhost:4000/api/bacon` to see the bacon ipsum goodness\! 🚀
 
 -----
+Sure bro! Here's the **README.md section** you can copy-paste to document the `index.html` and `script.js` part of your project:
 
+---
+
+## 🧾 Frontend (index.html & script.js)
+
+### 📄 `index.html`
+
+* Contains the structure of the webpage to display Bacon Ipsum text.
+* Includes:
+
+  * A heading
+  * A button to trigger the fetch
+  * A loader message
+  * An output area to display the text
+* Uses **Tailwind CSS via CDN** for styling
+* Calls `fetchBaconData()` using the `onclick` attribute
+
+```html
+<!-- Uses Tailwind CDN -->
+<script src="https://cdn.tailwindcss.com"></script>
+
+<!-- Calls fetchBaconData() on click -->
+<button onclick="fetchBaconData()">Get Bacon Text</button>
+```
+
+---
+
+### 📄 `script.js`
+
+* Contains JavaScript logic to fetch data from the backend:
+
+  ```
+  GET http://localhost:4000/api/bacon
+  ```
+* Updates the DOM with fetched text
+* Shows a loader while fetching
+* Handles any errors during fetch
+
+```js
+// Called when the button is clicked
+async function fetchBaconData() {
+  const response = await fetch('http://localhost:4000/api/bacon');
+  const data = await response.json();
+  // Update HTML with bacon paragraphs
+}
+```
+---
 ```
 ```
